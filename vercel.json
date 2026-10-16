@@ -1,0 +1,16 @@
+{
+  "version": 2,
+  "framework": "vite",
+  "installCommand": "pnpm install --no-frozen-lockfile",
+  "buildCommand": "pnpm build",
+  "outputDirectory": "dist/public",
+  "rewrites": [
+    { "source": "/docs", "destination": "/index.html" },
+    { "source": "/docs/", "destination": "/index.html" }
+  ],
+  "functions": {
+    "api/crawl/index.ts": { "maxDuration": 60, "memory": 1024 },
+    "api/crawl/stream.ts": { "maxDuration": 60, "memory": 1024 },
+    "api/track.ts": { "maxDuration": 10, "memory": 256 }
+  }
+}
